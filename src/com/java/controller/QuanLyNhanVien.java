@@ -121,19 +121,15 @@ public class QuanLyNhanVien implements IQuanLyNhanVien {
             for (int i = 0; i < danhSach.length; i++) {
                 NhanVien nhanVien = danhSach[i];
                 if (getTypeNhanVien(nhanVien) == phongBan) {// dùng hàm getType ở dưới cùng để xem từng nhân viên 
-                    //trong danh sách có thuộc phòng ban mình đang tìm k
-                    count++; // dùng count để xác định có nhân vien thuộc phòng ban mà mình đang tim trong danh sách không nếu có thì break thoát ra khỏi hàm luôn
-                    // chỉ cần có 1 nhân viên thuộc phòng ban mà mình đang tìm là dc vì nếu có duy nhất 1 người d tìm thấy thì
-                    // cũng đồng nghĩa là người đấy có lương cao nhất
+
+                    count++;
+
                     break;
                 }
             }
-            // sau khi tim dc count  ở phía trên nếu count > 0 thì ta thực hiện tìm kiếm nhân viên có lương cao nhât trong danh sách rồi trả về dữ liệu nhân viên
-            // nếu count <0 thì phải return null vì là danhSach mặc dù khác null nhưng trong danhSach lại không có nhân viên
-            // thuộc phòng ban mình đang tìm kiếm do vậy ta phải return null nếu không sẽ bị lỗi null pointer;
+
             if (count > 0) {
-                float maxLuong = 0; // cái này mình nhái lạibài hôm trước của đạt làm khá hay cho một biến Maxlương có cùng kiểu dữ liệu trả về của hàm thuNhap 
-                //trong nhan vien rồi dùng thuạt toán sắp xếp kiểu nổi bọt là tìm dc cái lớn nhất nếu trong danh sách có từ 2 nhân viên thuộc cùng một phòng ban trở lên 
+                float maxLuong = 0;
                 NhanVien nv = null;
                 for (int i = 0; i < danhSach.length; i++) {
                     NhanVien nhanVien = danhSach[i];
